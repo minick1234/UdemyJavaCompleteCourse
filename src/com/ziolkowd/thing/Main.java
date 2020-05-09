@@ -33,5 +33,16 @@ public class Main {
         int maxIntTest = 214_748_3647;
         System.out.println(maxIntTest);
 
+        byte myMaxByteValue = Byte.MAX_VALUE;
+        byte myMinByteValue = Byte.MIN_VALUE;
+
+        System.out.println("My Max byte value: " + myMaxByteValue);
+        System.out.println("My Min byte value: " + myMinByteValue);
+        System.out.println("The max value of byte is :" + myMaxByteValue + " my min value of byte is :" + myMinByteValue);
+
+         System.out.println("This is a example of something called a overflow for the max value : " + (myMaxByteValue + 1)); // This doesnt exist for bytes because after this is becomes a int!
+        System.out.println("This is a example of something called a overflow for the min value : " + (myMinByteValue - 1)); // This doesnt exist for bytes because after this is becomes a int!
+
+
     }
 }

@@ -40,9 +40,33 @@ public class Main {
         System.out.println("My Min byte value: " + myMinByteValue);
         System.out.println("The max value of byte is :" + myMaxByteValue + " my min value of byte is :" + myMinByteValue);
 
-         System.out.println("This is a example of something called a overflow for the max value : " + (myMaxByteValue + 1)); // This doesnt exist for bytes because after this is becomes a int!
+        System.out.println("This is a example of something called a overflow for the max value : " + (myMaxByteValue + 1)); // This doesnt exist for bytes because after this is becomes a int!
         System.out.println("This is a example of something called a overflow for the min value : " + (myMinByteValue - 1)); // This doesnt exist for bytes because after this is becomes a int!
 
+        //This can be done with no casting!
+        int myTotal = (myValue1 / 2);
+        int myTotal2 = (myValue2 / 2);
 
+
+        //Cast this to a byte because we used a integer type -
+        byte myNewByteValue = (byte) (myMinByteValue / 2);
+
+        short myMinShortValue = Short.MIN_VALUE;
+
+        //Cast this to a short because the division makes it a type integer so we need to cast back to a short-
+        short myNewShortValue = (short) (myMinShortValue / 2);
+
+        //THIS WAS SOME TYPE OF SMALL EASY CHALLENGE!
+        byte myByteVariable = 15;
+        short myShortVariable = 10;
+        int myIntVariable = 22;
+
+        long myLongVariable = 50000L + (10L * (myByteVariable + myShortVariable + myIntVariable));
+        System.out.println("The answer to the problem is: " + myLongVariable);
+
+        //This needs to be casted because we are trying to convert a type of int cause all the numbers get converted to that, to a short
+        //This means we need to cast back to a short!
+        short shortTotal = (short) (1000 + 10 * (myByteVariable + myShortVariable + myIntVariable));
+        System.out.println("This is the answer for the casted short: " + shortTotal);
     }
 }

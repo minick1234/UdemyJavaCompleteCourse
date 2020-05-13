@@ -16,9 +16,7 @@ public class KeyWordsAndExpressions {
 
         //These 3 things are expressions, first is assignment, second is a logical check, third is a reference/call
         int highScore = 50;
-        if (highScore == 50) {
-            System.out.println("This is an expression!");
-        }
+        System.out.println("This is an expression!");
 
         int score = 100; // This is an expression
         if (score > 99) { // This is an expression

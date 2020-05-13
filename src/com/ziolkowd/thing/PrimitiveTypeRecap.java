@@ -2,6 +2,7 @@ package com.ziolkowd.thing;
 
 public class PrimitiveTypeRecap {
     public static void main(String[] args) {
+       //Primitive types! --------
         //Byte
         //Short
         //int

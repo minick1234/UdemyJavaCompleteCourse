@@ -39,7 +39,6 @@ public class Main {
         System.out.println("My Max byte value: " + myMaxByteValue);
         System.out.println("My Min byte value: " + myMinByteValue);
         System.out.println("The max value of byte is :" + myMaxByteValue + " my min value of byte is :" + myMinByteValue);
-<<<<<<< HEAD
         System.out.println("-----------------------------------------------------------------------");
 
         short myMaxShortValue = Short.MAX_VALUE;
@@ -54,7 +53,6 @@ public class Main {
         System.out.println("My Max Short value: " + myMaxLongValue);
         System.out.println("My Min Short value: " + myMinLongValue);
         System.out.println("The max value of Short is :" + myMaxLongValue + " my min value of Short is :" + myMinLongValue);
-=======
 
         System.out.println("This is a example of something called a overflow for the max value : " + (myMaxByteValue + 1)); // This doesnt exist for bytes because after this is becomes a int!
         System.out.println("This is a example of something called a overflow for the min value : " + (myMinByteValue - 1)); // This doesnt exist for bytes because after this is becomes a int!
@@ -62,16 +60,14 @@ public class Main {
         //This can be done with no casting!
         int myTotal = (myValue1 / 2);
         int myTotal2 = (myValue2 / 2);
->>>>>>> e87a12205bdf7408d01e04b9b8efc88bb8702bb4
-
 
         //Cast this to a byte because we used a integer type -
         byte myNewByteValue = (byte) (myMinByteValue / 2);
 
-        short myMinShortValue = Short.MIN_VALUE;
+        short myMinValue = Short.MIN_VALUE;
 
         //Cast this to a short because the division makes it a type integer so we need to cast back to a short-
-        short myNewShortValue = (short) (myMinShortValue / 2);
+        short myNewShortValue = (short) (myMinValue / 2);
 
         //THIS WAS SOME TYPE OF SMALL EASY CHALLENGE!
         byte myByteVariable = 15;

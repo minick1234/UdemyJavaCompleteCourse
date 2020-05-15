@@ -6,9 +6,13 @@ public class MethodOverloading {
         newScore = calculateScore(900);
         calculateScore();
 
-        double theScore = calcFeetAndInchesToCentimeters(0, 5);
-        theScore = calcFeetAndInchesToCentimeters(5);
+        double theScore = calcFeetAndInchesToCentimeters(4, 5);
+        //theScore = calcFeetAndInchesToCentimeters(5);
 
+        if (theScore < 0.0) {
+            System.out.println("Invalid Parameters this is not allowed!");
+        }
+        calcFeetAndInchesToCentimeters(157);
     }
 
     public static int calculateScore(String playerName, int score) {
@@ -44,14 +48,15 @@ public class MethodOverloading {
     }
 
     public static double calcFeetAndInchesToCentimeters(double inches) {
-        if (!(inches >= 0 && inches <= 12)) {
+        if (inches < 0) {
             System.out.println("Invalid inches was given!");
-
             return -1;
         }
-        double centimeters = inches * 2.54;
-        System.out.println("Inches:" + inches + " = " + centimeters + " cm ");
-        return centimeters;
+        double feet = (int) inches / 12;
+        double remainingInches = (int) inches % 12;
+
+        System.out.println(inches + " inches is equal to " + feet + " feet and " + remainingInches + " inches");
+        return calcFeetAndInchesToCentimeters(feet, remainingInches);
     }
 }
 

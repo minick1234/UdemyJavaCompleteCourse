@@ -1,63 +1,98 @@
 package com.ziolkowd.thing;
 
-import java.util.ArrayList;
-
 public class NumberToWords {
-    public static void main(String[] args) {
-        numberToWords(123);
-        System.out.println("\n******************");
-        numberToWords(1010);
-        System.out.println("\n******************");
-        numberToWords(1000);
-        System.out.println("\n******************");
-        numberToWords(-12);
-    }
-
     public static void numberToWords(int number) {
         if (number < 0) {
             System.out.println("Invalid Value");
             return;
         }
         if (number == 0) {
-            System.out.println("ZERO ");
+            System.out.print("Zero ");
+            return;
         }
-        ArrayList<Integer> NumsInWord = new ArrayList<>();
-        for (int i = 0; (number != 0); i++) {
-            NumsInWord.add(number % 10);
+        int timeToDoIt = getDigitCount(number);
+        number = reverse(number);
+        int[] NumsInWord = new int[timeToDoIt];
+        for (int i = 0; (timeToDoIt > 0); i++) {
+            NumsInWord[i] = (number % 10);
             number /= 10;
-
-            switch (NumsInWord.get(i)) {
+            switch (NumsInWord[i]) {
                 case 0:
-                    System.out.print("ZERO ");
+                    System.out.print("Zero ");
                     break;
                 case 1:
-                    System.out.print("ONE ");
+                    System.out.print("One ");
                     break;
                 case 2:
-                    System.out.print("TWO ");
+                    System.out.print("Two ");
                     break;
                 case 3:
-                    System.out.print("THREE ");
+                    System.out.print("Three ");
                     break;
                 case 4:
-                    System.out.print("FOUR ");
+                    System.out.print("Four ");
                     break;
                 case 5:
-                    System.out.print("FIVE ");
+                    System.out.print("Five ");
                     break;
                 case 6:
-                    System.out.print("SIX ");
+                    System.out.print("Six ");
                     break;
                 case 7:
-                    System.out.print("SEVENS ");
+                    System.out.print("Seven ");
                     break;
                 case 8:
-                    System.out.print("EIGHT ");
+                    System.out.print("Eight ");
                     break;
                 case 9:
-                    System.out.print("NINE ");
+                    System.out.print("Nine ");
                     break;
             }
+            timeToDoIt--;
+        }
+    }
+
+    public static int reverse(int number) {
+        if (number == 0) {
+            return 0;
+        }
+        String reverseNumber = "";
+        if (number <= 0) {
+            int digits;
+            number *= -1;
+            while (number != 0) {
+                digits = number % 10;
+                reverseNumber += Integer.toString(digits);
+                number /= 10;
+            }
+            return Integer.parseInt(reverseNumber) * (-1);
+        } else {
+            int digits;
+            while (number != 0) {
+                digits = number % 10;
+                reverseNumber += Integer.toString(digits);
+                number /= 10;
+            }
+            return Integer.parseInt(reverseNumber);
+        }
+    }
+
+    public static int getDigitCount(int number) {
+        if (number < 0) {
+            return -1;
+        }
+        int n1 = 0;
+        String numArrayInt = "";
+
+        if (number == 0) {
+            return 1;
+        } else {
+            while (number > 0) {
+                n1 = number % 10;
+                numArrayInt += Integer.toString(n1);
+                number /= 10;
+            }
+            return numArrayInt.toCharArray().length;
         }
     }
 }
